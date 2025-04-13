@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Wellbeing Tracker</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Digital Wellbeing Tracker</h1>
+
+      <div class="card">
+        <h2>Screen Time</h2>
+        <p id="screen-time">0 minutes today</p>
+      </div>
+
+      <div class="card">
+        <h2>App Blocker</h2>
+        <p>Status: <span id="block-status" class="allowed">Allowed</span></p>
+        <button id="toggle-block">Block Apps</button>
+      </div>
+
+      <div class="card">
+        <h2>Set Time Limit</h2>
+        <input
+          id="time-limit"
+          type="number"
+          placeholder="Enter limit in minutes"
+        />
+        <button onclick="setTimeLimit()">Set Limit</button>
+      </div>
+
+      <div class="card">
+        <h2>Choose Website</h2>
+        <select id="site-select">
+          <option value="FocusZone">FocusZone</option>
+          <option value="ChillTube">ChillTube</option>
+          <option value="SocialNet">SocialNet</option>
+        </select>
+      </div>
+
+      <div class="card">
+        <h2>Usage Statistics</h2>
+        <canvas id="usageChart" width="400" height="200"></canvas>
+      </div>
+
+      <div id="warning" class="warning hidden">
+        ⛔ Time limit exceeded! Consider taking a break.
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

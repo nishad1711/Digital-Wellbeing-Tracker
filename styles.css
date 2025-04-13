@@ -1,0 +1,178 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  color: #1f2937;
+  padding: 2rem;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  background-color: #ffffffd9;
+  border-radius: 1.5rem;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem 2rem;
+  transition: transform 0.3s ease;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Header */
+h1 {
+  font-size: 2.5rem;
+  color: #1e40af;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Card Styling */
+.card {
+  background-color: #ffffff;
+  border-radius: 1.25rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  padding: 1.5rem 2rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.2s ease;
+  animation: floatUp 0.6s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+h2 {
+  font-size: 1.4rem;
+  color: #2563eb;
+  margin-bottom: 1rem;
+}
+
+p,
+label,
+select,
+input {
+  font-size: 1.1rem;
+  color: #111827;
+}
+
+/* Buttons */
+button {
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #1d4ed8;
+  transform: scale(1.05);
+}
+
+/* Input & Select */
+input[type="number"],
+select {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+select:focus {
+  border-color: #60a5fa;
+}
+
+/* Status */
+.allowed {
+  color: #10b981;
+  font-weight: 600;
+}
+.blocked {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+/* Warning */
+.warning {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: #fee2e2;
+  color: #b91c1c;
+  border-radius: 0.75rem;
+  font-weight: 500;
+  animation: shake 0.3s ease-in-out infinite alternate;
+}
+.hidden {
+  display: none;
+}
+
+/* Chart */
+canvas {
+  margin-top: 1rem;
+  max-width: 100%;
+}
+
+/* Animations */
+@keyframes floatUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(4px);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 2rem 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .card {
+    padding: 1.5rem 1rem;
+  }
+}
